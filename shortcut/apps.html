@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Bookmarks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .link-item {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .link-item:hover {
+            transform: scale(1.02);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .link-button {
+            transition: background-color 0.2s ease;
+        }
+        .link-button:hover {
+            background-color: #6366f1;
+        }
+        @media (max-width: 640px) {
+            .link-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .link-button {
+                width: 100%;
+                text-align: center;
+            }
+            h1 {
+                font-size: 1.875rem; /* 30px for mobile */
+            }
+            h2 {
+                font-size: 1.25rem; /* 20px for mobile */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center p-4">
+    <div class="w-full max-w-3xl px-2 sm:px-4">
+        <h1 class="text-3xl sm:text-4xl font-bold text-center mb-6 text-indigo-400">🌈 Colorful Bookmarks</h1>
+        
+        <!-- Search Bar -->
+        <input type="text" id="search-bar" placeholder="Search bookmarks..." class="w-full p-2 mb-6 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+
+        <!-- Bookmarks Section -->
+        <section>
+            <h2 class="text-2xl sm:text-2xl font-semibold mb-4 text-blue-300">Bookmarks</h2>
+            <ul id="bookmark-links" class="space-y-2">
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Facebook</span>
+                    <button onclick="window.open('https://www.facebook.com', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">TikTok</span>
+                    <button onclick="window.open('https://www.tiktok.com', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Amazon JP</span>
+                    <button onclick="window.open('https://www.amazon.co.jp', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Bitbank</span>
+                    <button onclick="window.open('https://www.bitbank.cc', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Mercari</span>
+                    <button onclick="window.open('https://www.mercari.com', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Fiverr</span>
+                    <button onclick="window.open('https://www.fiverr.com', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">CrowdWorks</span>
+                    <button onclick="window.open('https://crowdworks.jp', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Freelancer</span>
+                    <button onclick="window.open('https://www.freelancer.com', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">CrowdTech</span>
+                    <button onclick="window.open('https://crowdtech.jp', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Quora</span>
+                    <button onclick="window.open('https://www.quora.com', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Stack Overflow</span>
+                    <button onclick="window.open('https://stackoverflow.com', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Wikipedia</span>
+                    <button onclick="window.open('https://www.wikipedia.org', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+                <li class="link-item flex items-center justify-between p-4 rounded-lg bg-gray-800">
+                    <span class="text-blue-400">Moviesghar</span>
+                    <button onclick="window.open('https://www.watch-movies.com.pk/category/watch-bollywood-movies/page/10/', '_blank')" class="link-button px-4 py-2 bg-indigo-500 text-white rounded-lg">Open</button>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // Click tracking for analytics
+        document.querySelectorAll('.link-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const url = e.target.getAttribute('onclick').match(/'([^']+)'/)[1];
+                console.log(`Clicked button for: ${url}`);
+            });
+        });
+
+        // Search bar functionality
+        const searchBar = document.getElementById('search-bar');
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value;
+            const links = document.querySelectorAll('.link-item');
+            links.forEach(link => {
+                const text = link.querySelector('span').textContent.toLowerCase();
+                link.style.display = text.includes(searchTerm.toLowerCase()) ? 'flex' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

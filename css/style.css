@@ -60,7 +60,7 @@
 }
 
 .background {
-    background: rgba(0, 0, 0, 7) url('../aman.jpg');
+    background: rgba(0, 0, 0, 7) url('../img/aman.jpg');
     background-size: cover;
     background-blend-mode: darken;
 }
@@ -124,6 +124,15 @@
 .paras{
     padding: 0px 60px;
 }
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
 }

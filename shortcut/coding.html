@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookmark Links</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #673ab7;
+      margin-bottom: 15px;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 2px solid #7c4dff;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    p {
+      margin: 12px 0;
+      background-color: #e1bee7;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    p:hover {
+      background-color: #ce93d8;
+    }
+
+    a {
+      text-decoration: none;
+      color: #4a148c;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #880e4f;
+    }
+
+    .bookmark-count {
+      text-align: right;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Primary Bookmarks</h2>
+    <input type="text" id="searchInput" placeholder="Search bookmarks..." />
+    <div class="bookmark-count" id="countDisplay"></div>
+    <div id="bookmarkList">
+      <p><a target="_blank" href="https://github.com">My GitHub</a></p>
+      <p><a target="_blank" href="https://app.netlify.com">My Netlify</a></p>
+      <p><a target="_blank" href="https://vercel.com">My Vercel</a></p>
+      <p><a target="_blank" href="https://www.hostinger.com/">hostinger</a></p>
+      <p><a target="_blank" href="https://www.udemy.com/">Open Udemy</a></p>
+      <p><a target="_blank" href="https://www.w3schools.com/">Open W3Schools</a></p>
+      <p><a target="_blank" href="https://overapi.com/">Open OverAPI Cheatsheet</a></p>
+      <p><a target="_blank" href="https://www.hackerrank.com">Open HackerRank</a></p>
+      <p><a target="_blank" href="https://leetcode.com/">Open LeetCode</a></p>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const bookmarkList = document.getElementById('bookmarkList');
+    const countDisplay = document.getElementById('countDisplay');
+
+    function updateCount() {
+      const visibleLinks = bookmarkList.querySelectorAll('p:not([style*="display: none"])');
+      countDisplay.textContent = `Showing ${visibleLinks.length} bookmark(s)`;
+    }
+
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      const bookmarks = bookmarkList.getElementsByTagName('p');
+
+      Array.from(bookmarks).forEach(p => {
+        const text = p.textContent.toLowerCase();
+        p.style.display = text.includes(searchTerm) ? 'block' : 'none';
+      });
+
+      updateCount();
+    });
+
+    // Initial count
+    updateCount();
+  </script>
+</body>
+
+</html>

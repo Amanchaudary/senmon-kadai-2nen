@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Bookmarks</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .primary {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .primary:hover {
+      transform: scale(1.02);
+    }
+
+    .primary h2 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    .primary p {
+      margin: 10px 0;
+    }
+
+    .primary a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background-color: #2196f3;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .primary a:hover {
+      background-color: #0b7dda;
+    }
+
+    @media (max-width: 500px) {
+      .primary {
+        padding: 20px;
+      }
+
+      .primary h2 {
+        font-size: 20px;
+      }
+
+      .primary a {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="primary">
+    <h2>AI Bookmarks</h2>
+    <p><a target="_blank" href="https://chat.openai.com">Open ChatGPT</a></p>
+    <p><a target="_blank" href="https://chat.deepseek.com/">Open Deepseek</a></p>
+    <p><a target="_blank" href="https://grok.com/">Open Grok</a></p>
+    <p><a target="_blank" href="https://lovable.dev/">Open Lovable</a></p>
+    <p><a target="_blank" href="https://gemini.google.com">Open Gemini</a></p>
+    <p><a target="_blank" href="https://www.futurepedia.io/">Open All AI</a></p>
+  </div>
+</body>
+
+</html>
